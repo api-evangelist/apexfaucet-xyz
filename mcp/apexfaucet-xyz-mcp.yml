@@ -1,0 +1,71 @@
+generated: '2026-09-19'
+method: searched
+status: published
+source: https://apexfaucet.xyz/robots.txt
+docs: https://apexfaucet.xyz/docs/
+summary: 'APEX operates ONE remote MCP server at https://apexfaucet.xyz/api/mcp, on the same host as its website,
+  its x402 pay-per-call endpoints and its A2A endpoint (/api/a2a). The endpoint is named by the provider itself
+  in three places: robots.txt (dated 2026-09-17: ''87 MCP tools at /api/mcp, x402 micropayments, and a machine-readable
+  guide at /llms.txt'', and an explicit Allow: /api/mcp), the A2A agent card the provider served at /.well-known/agent.json
+  (Wayback capture 2026-05-19: mcp.endpoint https://apexfaucet.xyz/api/mcp, protocolVersion 2024-11-05, 14 tools,
+  2 paywalled), and the Glama connector listing xyz.apexfaucet/apex-x1 (Streamable HTTP, MCP 2024-11-05, 87 tools,
+  last tested 2026-09-19 and unhealthy). Free read tools need no credential; premium tools return an x402 HTTP 402
+  payment challenge settled in XNT on X1 or USDC on Solana. tools/list was POSTed on 2026-09-19 and answered HTTP
+  522 (Cloudflare origin timeout), so the live tool set and inputSchemas were NOT captured; nothing below is an
+  introspected schema. Re-probe when the origin returns.'
+deployment:
+  mode: remote
+  endpoint: https://apexfaucet.xyz/api/mcp
+  auth: none
+  verified: searched
+  note: A hosted HTTPS endpoint an MCP client POSTs to; no stdio package or npx/uvx install is documented. auth
+    is 'none' in the connection sense — the provider states the read tools are free — while paid tools are gated
+    by x402 PAYMENT (HTTP 402, retry with X-PAYMENT / X-PAYMENT-SOL header), an economic gate on invocation, not
+    an authentication scheme. 'searched' because the endpoint returned 522 at probe time; it was not verified live
+    by this pass.
+servers:
+- id: apex-x1
+  name: APEX on X1
+  endpoint: https://apexfaucet.xyz/api/mcp
+  transport: streamable-http
+  protocol_version: 2024-11-05 (as listed by the provider card and Glama)
+  auth: none
+  payment: x402 — XNT on X1 (native) or USDC on Solana; USD-anchored tiers $0.005 / $0.01 / $0.10 / $0.50 per call
+    per the provider x402 discovery document
+  status: unreachable-at-probe
+  probe:
+    fetched: '2026-09-19'
+    tools_list:
+      http_status: 522
+      body: 'error code: 522'
+      note: Cloudflare origin connection timed out
+  listings:
+  - Glama MCP connectors (xyz.apexfaucet/apex-x1)
+  - a2aregistry.org (Flux · APEX on X1, card points at this MCP endpoint)
+  - x402-list.com (APEX on X1)
+tool_count: 87 (provider robots.txt 2026-09-17; Glama 2026-09-19). 14 per the May 2026 agent card — the surface
+  has grown.
+tools: []
+tools_reported_by_third_party:
+  source: https://glama.ai/mcp/connectors/xyz.apexfaucet/apex-x1
+  note: Names and one-line descriptions as Glama rendered them on 2026-09-19; NOT introspected by this pass and
+    carrying no inputSchema. Glama also flags retired tools still listed (capyslot_play, prophet_markets).
+  tools:
+  - name: agent_vault_status
+    description: Live APEX vault metrics including pool balance and share price
+  - name: arc_exit_check
+    description: Token exit-liquidity analysis — if I buy this token on Arc, can I get out?
+  - name: arc_faucet_claim
+    description: Claim USDC and APEX on Arc via an EIP-191 signed challenge
+  - name: catalog_browse
+    description: Unified marketplace for NFTs, pools, land and in-game items
+  - name: bulk_screener
+    description: Top 200 X1 tokens with metadata (x402 paywalled, ~$0.10)
+related_surfaces:
+  a2a_endpoint: https://apexfaucet.xyz/api/a2a (robots.txt Allow; a2aregistry.org lists it as the A2A url) — 522
+    at probe
+  agent_card: /.well-known/agent-card.json (a2aregistry) and legacy /.well-known/agent.json (robots Allow, Wayback
+    2026-05-19) — both 522 at probe; NOT saved, see a2a rule
+  x402_discovery: https://apexfaucet.xyz/.well-known/x402 — 522 at probe; Wayback 2026-05-19 capture lists 13+ /api/x402/*
+    endpoints with USD-anchored prices
+  llms_txt: https://apexfaucet.xyz/llms.txt (named in robots.txt) — 522 at probe

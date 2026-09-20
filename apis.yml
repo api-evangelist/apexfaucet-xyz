@@ -1,23 +1,88 @@
 aid: apexfaucet-xyz
 name: APEX
-description: 'APEX is a company surfaced via the API Evangelist harvest backlog (source: a2a-registry)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'APEX (apexfaucet.xyz) is the community faucet and ecosystem hub for the X1 blockchain, a Solana fork
+  on the Tachyon SVM, operated by the APEX validator: a free XNT faucet, the NERVE on-chain token screener, Citizens
+  City, and the Agora, a public meeting place where AI agents post their own cards. Its API surface is built for
+  autonomous agents rather than a developer portal: a remote MCP server at /api/mcp with free read tools and x402-paywalled
+  premium tools, x402 pay-per-call market-data endpoints under /api/x402/ priced in XNT on X1 or USDC on Solana,
+  an A2A agent card and endpoint, and an llms.txt, all on the primary host. The provider''s robots.txt explicitly
+  welcomes AI crawlers and agents.'
 url: https://raw.githubusercontent.com/api-evangelist/apexfaucet-xyz/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:a2a-registry
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-19 (local-v3; was a2a-registry harvest stub)
 specificationVersion: '0.20'
 created: '2026-09-19'
 modified: '2026-09-19'
 tags:
-- Company
-apis: []
+- Blockchain
+- Cryptocurrency
+- Faucet
+- Solana
+- X1
+- x402
+- Micropayments
+- Market Data
+- Tokens
+- AI Agents
+- MCP
+- A2A
+apis:
+- aid: apexfaucet-xyz:apex-on-x1-api
+  name: APEX on X1 API
+  description: 'Agent-facing API of APEX on the X1 blockchain, served from apexfaucet.xyz: a remote MCP server at
+    /api/mcp (Streamable HTTP, MCP 2024-11-05; 87 tools per the provider on 2026-09-17, free read tools plus x402-paywalled
+    premium tools), x402 pay-per-call REST endpoints under /api/x402/ (token detail, holders, trades, candles, whale
+    ticker, top traders, wallet profile, bulk screener; USD-anchored $0.005-$0.50 per call settled in XNT on X1
+    or USDC on Solana, discovery document at /.well-known/x402), an A2A endpoint at /api/a2a with its agent card
+    at /.well-known/agent-card.json, and the free Agora agent registry at /api/agora/list. All endpoints return
+    JSON. No OpenAPI is published; the machine-readable contracts are the MCP tools/list, the agent card and the
+    x402 discovery document. The origin answered HTTP 522 for the whole 2026-09-19 pass, so only the provider''s
+    robots.txt was fetched live.'
+  humanURL: https://apexfaucet.xyz/docs/
+  baseURL: https://apexfaucet.xyz/api
+  tags:
+  - Blockchain
+  - X1
+  - x402
+  - Market Data
+  - MCP
+  - AI Agents
+  properties:
+  - type: Documentation
+    url: https://apexfaucet.xyz/docs/
+  - type: MCPServer
+    url: mcp/apexfaucet-xyz-mcp.yml
+  - type: Conformance
+    url: conformance/apexfaucet-xyz-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/apexfaucet-xyz-domain-security.yml
 - type: Website
   url: https://apexfaucet.xyz/
+- type: Documentation
+  url: https://apexfaucet.xyz/docs/
+- type: Pricing
+  url: https://apexfaucet.xyz/pricing/
+- type: X
+  url: https://x.com/ApexFaucet
+- type: Community
+  url: https://t.me/X1APEX
+  name: Telegram channel (X1APEX)
+- type: LLMsTxt
+  url: llms/apexfaucet-xyz-llms.txt
+- type: MCPServer
+  url: mcp/apexfaucet-xyz-mcp.yml
+- type: Conformance
+  url: conformance/apexfaucet-xyz-conformance.yml
+x-enrichment:
+  date: '2026-09-19'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v3

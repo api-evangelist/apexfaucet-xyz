@@ -1,0 +1,28 @@
+generated: '2026-09-19'
+method: searched
+source: https://apexfaucet.xyz/robots.txt (live, 200, cf-cache-status STALE, last-modified 2026-09-17); provider
+  x402 discovery document /.well-known/x402 and agent card /.well-known/agent.json (Wayback captures 2026-05-19);
+  x402-list.com independent compliance check
+standards:
+- id: x402
+  name: x402 HTTP payment protocol
+  conforms: true
+  verification: partial
+  evidence: 'The provider''s own robots.txt (fetched 2026-09-19, HTTP 200) states ''x402 payment-required endpoints
+    — bots welcome to crawl after paying. See discovery doc for terms: https://apexfaucet.xyz/.well-known/x402.
+    Default price: 0.012 XNT (~$0.01) per request''. The provider''s x402 discovery document (Wayback 2026-05-19)
+    declares {standard: x402, version: 1}, two networks (X1 native XNT, replayHeader X-PAYMENT; Solana USDC, replayHeader
+    X-PAYMENT-SOL), USD-anchored tiers and 13+ /api/x402/* endpoints with prices. The agent card declares authentication.schemes:
+    [x402]. x402-list.com independently reports 14/14 x402 compliance checks passing (grade A) on GET /api/x402/echo,
+    member since 2026-09-14.'
+  note: 'No 402 was observed by this pass: every request to apexfaucet.xyz answered HTTP 522 (origin down). Recorded
+    as conforming on the provider''s own published declarations plus a third-party check; re-verify live when the
+    origin returns.'
+- id: oauth2
+  conforms: false
+  evidence: No OAuth documented anywhere the provider publishes; access is anonymous (free tools) or x402 payment.
+    /.well-known/oauth-authorization-server answered 522 at probe.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery documented; /.well-known/openid-configuration 404 in the 2026-01-07 Wayback
+    capture and 522 at probe.

@@ -1,0 +1,68 @@
+generated: '2026-09-19'
+method: probed
+description: 'Results of probing the /.well-known/ discovery surface on apexfaucet.xyz on 2026-09-19. Every path
+  answered HTTP 522 (Cloudflare: origin connection timed out) — the provider''s origin was unreachable for the whole
+  pass, so nothing was saved and NO WellKnown pointer is emitted; a 522 is an outage, not a 404, and says nothing
+  about what the provider publishes. Evidence the surface exists when the origin is up: the provider''s own robots.txt
+  (served 200 from Cloudflare''s cache, cf-cache-status STALE, last-modified 2026-09-17) explicitly Allows /.well-known/x402
+  and /.well-known/agent.json; the Wayback Machine holds 200 captures of /.well-known/agent.json and /.well-known/x402
+  from 2026-05-19; a2aregistry.org reports fetching /.well-known/agent-card.json (protocolVersion 0.3.0, last passed
+  2026-09-14). Re-probe when the origin returns. www.apexfaucet.xyz resolves to the same Cloudflare zone and its
+  root also returned 522; api./docs./mcp. subdomains do not resolve.'
+hosts:
+- host: https://apexfaucet.xyz
+  documents:
+  - path: /.well-known/security.txt
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/openid-configuration
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/oauth-authorization-server
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/oauth-protected-resource
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/api-catalog
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/ai-plugin.json
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/agent-card.json
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/agent.json
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+  - path: /.well-known/x402
+    status: 522
+    note: Cloudflare 522 origin timeout; not saved
+x-evidence:
+  robots_txt:
+    url: https://apexfaucet.xyz/robots.txt
+    http_status: 200
+    cf_cache_status: STALE
+    last_modified: '2026-09-17T16:00:06Z'
+    age_seconds_at_fetch: 114009
+    allows:
+    - /.well-known/x402
+    - /.well-known/agent.json
+    - /api/mcp
+    - /api/a2a
+    - /api/x402/
+    - /discovery/resources
+    - /llms.txt (named in comment)
+  wayback_captures_200:
+  - url: https://apexfaucet.xyz/.well-known/agent.json
+    timestamp: '20260519011940'
+  - url: https://apexfaucet.xyz/.well-known/x402
+    timestamp: '20260519013206'
+  third_party_status:
+  - source: https://glama.ai/mcp/connectors/xyz.apexfaucet/apex-x1
+    observed: Unhealthy, last tested 2026-09-19 23:58
+  - source: https://x402-list.com/services/apex-on-x1
+    observed: Offline; 90% uptime over 24h, 98% over 30 days
+  - source: https://a2aregistry.org/agents/bcd593db-899c-4663-8c3d-247880471e1c/
+    observed: card at /.well-known/agent-card.json, protocolVersion 0.3.0, last passed check 2026-09-14

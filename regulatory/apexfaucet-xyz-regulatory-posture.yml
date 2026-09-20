@@ -1,0 +1,10 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+source: https://apexfaucet.xyz/ (HTTP 522 at probe)
+signals: {}
+note: 'Nothing harvested: every conventional path (/accessibility, /legal/subprocessors, /legal/dpa, /privacy/requests,
+  /transparency, /security/sbom, /ai/transparency) sits behind an origin that answered HTTP 522 for the whole pass,
+  and none of the artifacts harvested this run (well-known, security programs, conformance) carried a regulatory
+  signal. The provider''s archived homepage and pricing page (Wayback 2026-03/04) link no privacy policy, terms,
+  accessibility or subprocessor page. An empty signals map is the measurement, not a finding that no regime applies.'
