@@ -1,0 +1,31 @@
+# Front Door AI Index — apexfaucet-xyz — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: apexfaucet-xyz
+  lexicon_version: '1.0'
+  probed_at: '2026-09-25'
+  host: apexfaucet.xyz
+  final_host: apexfaucet.xyz
+  ownership: own
+  owner: apexfaucet-xyz
+  shares_host_with: null
+  inherited_from: null
+  alias_of: null
+  verdict: scored
+  score: 6
+  band: 4
+  band_label: moderate
+  host_score: 6
+  density: 2.44
+  words: 2464
+  tiers:
+    agentic: 3
+    core: 3
+    model: 0
+  ambiguous: 14
+  top_terms:
+    agent: 14
+    AI: 3
+    AI agent: 2
+    autonomous agent: 1
