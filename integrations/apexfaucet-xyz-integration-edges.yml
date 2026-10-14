@@ -1,0 +1,40 @@
+edges:
+- partner_name: MCP Registry
+  partner: mcp
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=xyz.apexfaucet
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: xyz.apexfaucet/apex-arc
+    register_id: xyz.apexfaucet/apex-arc
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-14'
+  mcp_registry:
+    servers:
+    - xyz.apexfaucet/apex-arc
+    - xyz.apexfaucet/apex-evm
+    - xyz.apexfaucet/apex-g2-jobs
+    - xyz.apexfaucet/apex-web
+    - xyz.apexfaucet/apex-x1
+    hosted_remote: 5
+    local_package: 0
+    transports:
+      streamable-http: 6
+    auth_declared: 0
+    catalog_declared: true
+    namespace_domains:
+    - apexfaucet.xyz
+  matched_by:
+  - namespace-domain
+  detected_by: sweep-agent-tools.py
+  first_seen: '2026-10-14'
+generated: '2026-10-14'
+method: searched
+checked:
+- https://registry.modelcontextprotocol.io/v0/servers
