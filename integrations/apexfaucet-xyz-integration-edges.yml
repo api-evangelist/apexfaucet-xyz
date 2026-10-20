@@ -14,7 +14,7 @@ edges:
     registered_name: xyz.apexfaucet/apex-arc
     register_id: xyz.apexfaucet/apex-arc
     detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   mcp_registry:
     servers:
     - xyz.apexfaucet/apex-arc
@@ -51,8 +51,8 @@ edges:
     hosts:
     - apexfaucet.xyz
     conformance: true
-    task_conformance_working: true
-    healthy: true
+    task_conformance_working: false
+    healthy: false
     signal_note: booleans over the provider's hosts; listings are context, never read
   contract_reference:
     register: a2aregistry.org /api/agents
@@ -67,7 +67,7 @@ edges:
     sample_agents:
     - Flux · APEX on X1 & Arc
     detected_by: sweep-ai-agents.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   detected_by: sweep-ai-agents.py
   first_seen: '2026-10-15'
 generated: '2026-10-14'

@@ -19,6 +19,31 @@
     registered_name: xyz.apexfaucet/apex-arc
     register_id: xyz.apexfaucet/apex-arc
     detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: apexfaucet-xyz-a2aregistry-org
+  label: a2aregistry.org
+  partner_name: a2aregistry.org
+  category: A2A agent registry
+  type: register
+  channel: standard-directory
+  evidence: https://a2aregistry.org/api/agents/bcd593db-899c-4663-8c3d-247880471e1c
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: a2aregistry.org /api/agents
+    spec_file: null
+    standard: A2A
+    role: a2a-registry-listing
+    registered_name: APEX
+    matched_domain: apexfaucet.xyz
+    matched_by: domain
+    matched_via: card-host
+    listings_context: 1
+    sample_agents:
+    - Flux · APEX on X1 & Arc
+    detected_by: sweep-ai-agents.py
+    detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
