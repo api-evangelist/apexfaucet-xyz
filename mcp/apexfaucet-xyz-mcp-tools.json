@@ -1653,6 +1653,46 @@
         }
       },
       {
+        "name": "arc_immune",
+        "description": "Deep immune check for an Arc token: a real buy-then-sell round trip, the launch cluster (bundled or not), the holders and the creator's launch history, fused into one grade (A/B healthy (B fair: sells with a cost or caveat), C watch, D sick, F infected, ? unproven) with every reason and a sha256 evidence hash you can recompute. $0.01 per call over x402; 10% of each paid check is recorded as owed to a People Pot (a ledger; nothing paid out yet).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string",
+              "description": "the Arc token contract address (0x...)"
+            },
+            "payment": {
+              "type": "string",
+              "description": "a signed x402 payment (the same base64 payload you would put in the PAYMENT-SIGNATURE header). Pass it here and the purchase completes inside this tool call."
+            }
+          },
+          "required": [
+            "token"
+          ]
+        }
+      },
+      {
+        "name": "arc_antibody",
+        "description": "The on-chain immune attestation of an Arc token (ImmuneAttestations on Arc mainnet): grade A/B healthy, C watch, D sick, F infected, ? unproven, the sha256 evidence hash and the block it was written in. Read it before you buy: a public chain record, not a fresh check (a fresh one is arc_immune). attested:false means nobody bought a deep check of that token yet, which is not a clean bill of health. $0.001 per call over x402.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string",
+              "description": "the Arc token contract address (0x...)"
+            },
+            "payment": {
+              "type": "string",
+              "description": "a signed x402 payment (the same base64 payload you would put in the PAYMENT-SIGNATURE header). Pass it here and the purchase completes inside this tool call."
+            }
+          },
+          "required": [
+            "token"
+          ]
+        }
+      },
+      {
         "name": "arc_token_check",
         "description": "Everything about an Arc token in one call: can you sell it (0-100 safety score from a real round trip, pool fee, hook) and what its owner can do (mint, pause, blacklist, upgrade). $0.002 per call over x402.",
         "inputSchema": {

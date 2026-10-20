@@ -1087,14 +1087,14 @@ related_surfaces:
     13+ /api/x402/* endpoints with USD-anchored prices
   llms_txt: https://apexfaucet.xyz/llms.txt (named in robots.txt) — 522 at probe
 tool_quality:
-  tool_count: 195
-  tokens_total: 36890
-  tokens_per_tool_median: 186
+  tool_count: 197
+  tokens_total: 37349
+  tokens_per_tool_median: 187
   heavy_tools: []
   heavy_tool_count: 0
-  params_total: 389
+  params_total: 393
   params_undescribed: 32
-  params_described_pct: 91.8
+  params_described_pct: 91.9
   tools_with_undescribed_params: 18
   tools_annotated: 0
   annotated_pct: 0.0
