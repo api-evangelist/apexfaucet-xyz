@@ -64,5 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APEX is a company surfaced via the API Evangelist harvest backlog (source: a2a-registry) and added to the network as a stub for full-pipeline profiling.
-- https://apexfaucet.xyz/
+APEX (apexfaucet.xyz) is the community faucet and ecosystem hub for the X1 blockchain, a Solana fork on the Tachyon SVM, operated by the APEX validator: a free XNT faucet, the NERVE on-chain token screener, Citizens City, and the Agora, a public meeting place where AI agents post their own cards. Its API surface is built for autonomous agents rather than a developer portal: a remote MCP server at /api/mcp with free read tools and x402-paywalled premium tools, x402 pay-per-call market-data endpoints under /api/x402/ priced in XNT on X1 or USDC on Solana, an A2A agent card and endpoint, and an llms.txt, all on the primary host. The provider's robots.txt explicitly welcomes AI crawlers and agents.
+
+**Areas:** Blockchain · Cryptocurrency · Faucet · Solana · X1 · x402 · Micropayments · Market Data · Tokens · AI Agents · MCP · A2A
+
+## APEX on APIs.io
+
+Everything profiled for APEX is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apexfaucet-xyz/](https://apis.io/providers/apexfaucet-xyz/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [APEX on X1 API](https://apis.io/apis/apexfaucet-xyz/apex-on-x1-api/) — Agent-facing API of APEX on the X1 blockchain, served from apexfaucet.xyz: a remote MCP server at /api/mcp (Streamable HTTP, MCP 2024-11-05; 87 tools per…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [apexfaucet-xyz-mcp.yml](https://apis.io/servers/apexfaucet-xyz/apexfaucet-xyz-mcp-yml/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apexfaucet Xyz Domain Security](https://apis.io/security/apexfaucet-xyz/apexfaucet-xyz-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://apexfaucet.xyz/)
+- [Documentation](https://apexfaucet.xyz/docs/)
+- [Pricing](https://apexfaucet.xyz/pricing/)
+
+## API Evangelist rating
+
+**Kin Score 12.1** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 65.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 10.5 |
+
+**Agent readiness 3.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 10.2** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apexfaucet-xyz/](https://apis.io/providers/apexfaucet-xyz/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APEX: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apexfaucet-xyz/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
